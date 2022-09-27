@@ -1,3 +1,159 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "JetBrains";
+  src: url("../assets/fonts/static/JetBrainsMono-Bold.ttf");
+}
+
+@font-face {
+  font-family: "JetBrainsItalic";
+  src: url("../assets/fonts/static/JetBrainsMono-BoldItalic.ttf");
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  width: 1px;
+}
+
+input[type="checkbox"] + label {
+  position: relative;
+}
+
+input[type="checkbox"] + label::before {
+  content: " ";
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 22px;
+  width: 20px;
+  height: 20px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #e6e5ea;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+input[type="checkbox"] + label:hover::before {
+  border-color: #a4ffaf;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked + label::after {
+  content: " ";
+  background-image: url("../../assets/images/icon-check.svg");
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+  background-position: center center;
+  position: absolute;
+  left: 0px;
+  top: 2.5px;
+  width: 20px;
+  height: 20px;
+  background-color: #a4ffaf;
+}
+
+input[type="checkbox"] + label:hover::after {
+  background-color: #e6e5ea;
+  border-width: 2px;
+  border-color: #a4ffaf;
+  border-style: solid;
+  cursor: pointer;
+}
+
+#copy:hover .copy {
+  fill: #e6e5ea;
+}
+
+.not-active {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.too-weak {
+  border-color: #f64a4a;
+  background-color: #f64a4a;
+}
+
+.weak {
+  border-color: #fb7c58;
+  background-color: #fb7c58;
+}
+
+.medium {
+  border-color: #f8cd65;
+  background-color: #f8cd65;
+}
+
+.strong {
+  border-color: #a4ffaf;
+  background-color: #a4ffaf;
+}
+
+@layer utilities {
+  /* HIDE SCROLLBAR BUT STILL ALLOW SCROLL */
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+    width: 0 !important;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  /*Chrome*/
+  input[type="range"] {
+    background-color: #18171f;
+    -webkit-appearance: none;
+  }
+  input[type="range"]::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    color: #a4ffaf;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #e6e5ea;
+    appearance: none;
+    cursor: ew-resize;
+    -webkit-appearance: none;
+  }
+  input[type="range"]::-webkit-slider-thumb:hover {
+    border: 2px solid #a4ffaf;
+    background: #18171f;
+    cursor: pointer;
+  }
+  /** FF*/
+  input[type="range"]::-moz-range-progress {
+    background-color: #a4ffaf;
+  }
+  input[type="range"]::-moz-range-track {
+    background-color: #18171f;
+  }
+  /* IE*/
+  input[type="range"]::-ms-fill-lower {
+    background-color: #a4ffaf;
+  }
+  input[type="range"]::-ms-fill-upper {
+    background-color: #18171f;
+  }
+  #length {
+    background: linear-gradient(
+      to right,
+      #a4ffaf 0%,
+      #a4ffaf 50%,
+      #18171f 50%,
+      #18171f 100%
+    );
+    transition: background 450ms ease-in;
+  }
+}
