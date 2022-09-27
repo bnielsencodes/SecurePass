@@ -1016,7 +1016,7 @@ video {
 
 .text-medium-grey {
   --tw-text-opacity: 1;
-  color: rgb(129 125 146 / var(--tw-text-opacity));
+  color: rgb(129 125 159 / var(--tw-text-opacity));
 }
 
 .text-custom-green {
@@ -1264,7 +1264,7 @@ input[type="checkbox"] + label:hover::after {
 }
 
 @media (min-width: 768px) {
-  #generate:hover p {
+  #generate:hover {
     color: #a4ffaf;
   }
 

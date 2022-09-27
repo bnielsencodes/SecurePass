@@ -159,7 +159,7 @@ input[type="checkbox"] + label:hover::after {
 }
 
 @media (min-width: 768px) {
-  #generate:hover p {
+  #generate:hover {
     color: #a4ffaf;
   }
   #generate:hover div svg path {

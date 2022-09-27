@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       backgroundColor: {
         "dark-grey": "#24232c",
-        "medium-grey": "#817d92",
+        "medium-grey": "#817d9f",
         "off-white": "#e6e5ea",
         "off-black": "#18171f",
         "custom-green": "#a4ffaf",
@@ -15,7 +15,7 @@ module.exports = {
       },
       colors: {
         "dark-grey": "#24232c",
-        "medium-grey": "#817d92",
+        "medium-grey": "#817d9f",
         "off-white": "#e6e5ea",
         "custom-green": "#a4ffaf",
         "custom-red": "#f64a4a",

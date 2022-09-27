@@ -18,62 +18,66 @@
   <body
     class="p-5 md:py-24 bg-off-black text-off-white font-jetBrains text-body leading-body tracking-wide overflow-y-auto no-scrollbar"
   >
-    <form id="passwordGeneratorForm" class="max-w-[576px] mx-auto" action="">
-      <div class="container">
-        <p
-          class="mt-12 md:mt-6 mb-5 md:mb-8 md:text-xl text-center text-medium-grey"
-        >
-          Password Generator
-        </p>
+    <header
+      class="max-w-[576px] mx-auto mt-12 md:mt-6 mb-5 md:mb-8 md:text-xl text-center text-medium-grey"
+    >
+      Password Generator
+    </header>
+    <!-- ********************************
+      ***********************************
+      TOP SECTION
+      ***********************************
+    **********************************-->
+    <div class="max-w-[576px] mx-auto">
+      <div
+        id="result__container"
+        class="flex justify-between items-center gap-1 w-full px-5 py-4 md:px-7 md:py-5 mb-5 bg-dark-grey"
+      >
         <!-- ********************************
-          ***********************************
-          TOP SECTION
-          ***********************************
-        **********************************-->
-        <div
-          id="result__container"
-          class="flex justify-between items-center gap-1 w-full px-5 py-4 md:px-7 md:py-5 mb-5 bg-dark-grey"
-        >
-          <!-- ********************************
             ***********************************
             GENERATED PASSWORD
             ***********************************
           **********************************-->
-          <input
-            id="result"
-            class="flex items-center w-8/12 h-[42px] bg-dark-grey text-off-white text-heading-md md:text-heading-lg placeholder:text-off-white focus:outline-none"
-            type="text"
-            placeholder="************"
-            spellcheck="false"
-          />
-          <!-- COPY PASSWORD BUTTON -->
-          <label class="flex justify-between gap-3" for="result">
-            <span
-              id="copy-text"
-              class="hidden text-custom-green text-base md:text-body"
-              >COPIED</span
+        <input
+          id="result"
+          class="flex items-center w-8/12 h-[42px] bg-dark-grey text-off-white text-heading-md md:text-heading-lg placeholder:text-off-white focus:outline-none"
+          type="text"
+          placeholder="************"
+          spellcheck="false"
+          aria-label="Generated password"
+        />
+        <!-- COPY PASSWORD BUTTON -->
+        <div class="flex justify-between gap-3">
+          <span
+            id="copy-text"
+            class="hidden text-custom-green text-base md:text-body"
+            >COPIED</span
+          >
+          <button id="copy" class="flex items-center w-6 md:w-6">
+            <svg
+              class="hover:cursor-pointer"
+              width="21px"
+              height="24px"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-label="Copy password icon"
             >
-            <div id="copy" class="flex items-center w-6 md:w-6">
-              <svg
-                class="hover:cursor-pointer"
-                width="21px"
-                height="24px"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  class="copy"
-                  d="M20.341 3.091 17.909.659A2.25 2.25 0 0 0 16.319 0H8.25A2.25 2.25 0 0 0 6 2.25V4.5H2.25A2.25 2.25 0 0 0 0 6.75v15A2.25 2.25 0 0 0 2.25 24h10.5A2.25 2.25 0 0 0 15 21.75V19.5h3.75A2.25 2.25 0 0 0 21 17.25V4.682a2.25 2.25 0 0 0-.659-1.591ZM12.469 21.75H2.53a.281.281 0 0 1-.281-.281V7.03a.281.281 0 0 1 .281-.281H6v10.5a2.25 2.25 0 0 0 2.25 2.25h4.5v1.969a.282.282 0 0 1-.281.281Zm6-4.5H8.53a.281.281 0 0 1-.281-.281V2.53a.281.281 0 0 1 .281-.281H13.5v4.125c0 .621.504 1.125 1.125 1.125h4.125v9.469a.282.282 0 0 1-.281.281Zm.281-12h-3v-3h.451c.075 0 .147.03.2.082L18.667 4.6a.283.283 0 0 1 .082.199v.451Z"
-                  fill="#A4FFAF"
-                />
-              </svg>
-            </div>
-          </label>
+              <path
+                class="copy"
+                d="M20.341 3.091 17.909.659A2.25 2.25 0 0 0 16.319 0H8.25A2.25 2.25 0 0 0 6 2.25V4.5H2.25A2.25 2.25 0 0 0 0 6.75v15A2.25 2.25 0 0 0 2.25 24h10.5A2.25 2.25 0 0 0 15 21.75V19.5h3.75A2.25 2.25 0 0 0 21 17.25V4.682a2.25 2.25 0 0 0-.659-1.591ZM12.469 21.75H2.53a.281.281 0 0 1-.281-.281V7.03a.281.281 0 0 1 .281-.281H6v10.5a2.25 2.25 0 0 0 2.25 2.25h4.5v1.969a.282.282 0 0 1-.281.281Zm6-4.5H8.53a.281.281 0 0 1-.281-.281V2.53a.281.281 0 0 1 .281-.281H13.5v4.125c0 .621.504 1.125 1.125 1.125h4.125v9.469a.282.282 0 0 1-.281.281Zm.281-12h-3v-3h.451c.075 0 .147.03.2.082L18.667 4.6a.283.283 0 0 1 .082.199v.451Z"
+                fill="#A4FFAF"
+              />
+            </svg>
+          </button>
         </div>
-        <!-- ********************************
-          ***********************************
-          BOTTOM SECTION
-          ***********************************
-        **********************************-->
+      </div>
+    </div>
+    <!-- ********************************
+      ***********************************
+      BOTTOM SECTION
+      ***********************************
+    **********************************-->
+    <form id="passwordGeneratorForm" class="max-w-[576px] mx-auto">
+      <div class="container">
         <div class="px-5 py-7 md:px-7 md:py-8 mb-12 md:mb-20 bg-dark-grey">
           <!-- OPTIONS CONTAINER -->
           <div class="options mb-8 md:mb-9">
@@ -83,7 +87,7 @@
               ***********************************
             **********************************-->
             <div>
-              <label for="length">
+              <div>
                 <div class="flex justify-between mb-4">
                   <p>Character Length</p>
                   <h1
@@ -93,7 +97,7 @@
                     12
                   </h1>
                 </div>
-              </label>
+              </div>
               <input
                 id="length"
                 class="option w-full h-2 mb-12 rounded-none bg-off-black appearance-none outline-none"
@@ -103,6 +107,7 @@
                 step="1"
                 value="12"
                 onchange="rangeChange(this.value)"
+                aria-label="Password Length"
               />
             </div>
             <!-- ********************************
@@ -111,32 +116,59 @@
               ***********************************
             **********************************-->
             <div class="option flex items-center mb-4">
-              <input type="checkbox" name="options" id="uppercase" checked />
+              <input
+                type="checkbox"
+                name="options"
+                id="uppercase"
+                checked
+                aria-labelledby="uppercase-label"
+              />
               <label
+                id="uppercase-label"
                 class="flex items-center text-base md:text-body"
                 for="uppercase"
                 >Include Uppercase Letters</label
               >
             </div>
             <div class="option flex items-center mb-4">
-              <input type="checkbox" name="options" id="lowercase" checked />
+              <input
+                type="checkbox"
+                name="options"
+                id="lowercase"
+                checked
+                aria-labelledby="lowercase-label"
+              />
               <label
+                id="lowercase-label"
                 class="flex items-center text-base md:text-body"
                 for="lowercase"
                 >Include Lowercase Letters</label
               >
             </div>
             <div class="option flex items-center mb-4">
-              <input type="checkbox" name="options" id="numbers" checked />
+              <input
+                type="checkbox"
+                name="options"
+                id="numbers"
+                checked
+                aria-labelledby="numbers-label"
+              />
               <label
+                id="numbers-label"
                 class="flex items-center text-base md:text-body"
                 for="numbers"
                 >Include Numbers</label
               >
             </div>
             <div class="option flex items-center">
-              <input type="checkbox" name="options" id="symbols" />
+              <input
+                type="checkbox"
+                name="options"
+                id="symbols"
+                aria-labelledby="symbols-label"
+              />
               <label
+                id="symbols-label"
                 class="flex items-center text-base md:text-body"
                 for="symbols"
                 >Include Symbols</label
@@ -196,16 +228,21 @@
             id="generate"
             class="btn flex justify-center items-center gap-4 md:gap-6 w-full h-[62px] md:h-[68px] bg-custom-green text-dark-grey uppercase hover-hover:hover:bg-transparent hover-hover:hover:border hover-hover:hover:border-custom-green hover-hover:hover:border-2"
             type="submit"
+            value="Generate"
           >
-            <p>Generate</p>
-            <div>
-              <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  fill="#24232C"
-                  d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z"
-                />
-              </svg>
-            </div>
+            Generate
+
+            <svg
+              width="12"
+              height="12"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-label="Arrow right icon"
+            >
+              <path
+                fill="#24232C"
+                d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z"
+              />
+            </svg>
           </button>
         </div>
       </div>
