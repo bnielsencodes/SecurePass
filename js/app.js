@@ -26,3 +26,78 @@ let alphabet = /[a-zA-Z]/;
 let numbers = /[0-9]/;
 let scharacters = /[!,@,#,$,%,^,&,*,?,_,(,),-,+,=,~]/;
 
+/* ------------------------------------
+---------------------------------------
+Character Code Generating Function
+---------------------------------------
+------------------------------------ */
+let arrayFromLowToHigh = (low, high) => {
+  const array = [];
+  for (let i = low; i <= high; i++) {
+    array.push(i);
+  }
+  return array;
+};
+
+/* ------------------------------------
+---------------------------------------
+Generating Character Codes
+---------------------------------------
+------------------------------------ */
+const UPPERCASE_CODES = arrayFromLowToHigh(65, 90);
+const LOWERCASE_CODES = arrayFromLowToHigh(97, 122);
+const NUMBER_CODES = arrayFromLowToHigh(48, 57);
+const SYMBOL_CODES = arrayFromLowToHigh(33, 47)
+  .concat(arrayFromLowToHigh(58, 64))
+  .concat(arrayFromLowToHigh(91, 96))
+  .concat(arrayFromLowToHigh(123, 126));
+
+/* ------------------------------------
+---------------------------------------
+Checking the options that are selected and setting the password
+---------------------------------------
+------------------------------------ */
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const characterAmount = lengthDOM.value;
+  const includeUppercase = uppercaseDOM.checked;
+  const includeLowercase = lowercaseDOM.checked;
+  const includeNumbers = numbersDOM.checked;
+  const includeSymbols = symbolsDOM.checked;
+  const password = generatePassword(
+    characterAmount,
+    includeUppercase,
+    includeLowercase,
+    includeNumbers,
+    includeSymbols
+  );
+  resultDOM.value = password;
+});
+
+/* ------------------------------------
+---------------------------------------
+Password Generating Function
+---------------------------------------
+------------------------------------ */
+let generatePassword = (
+  characterAmount,
+  includeUppercase,
+  includeLowercase,
+  includeNumbers,
+  includeSymbols
+) => {
+  let charCodes = [];
+  if (includeUppercase) charCodes = charCodes.concat(UPPERCASE_CODES);
+  if (includeLowercase) charCodes = charCodes.concat(LOWERCASE_CODES);
+  if (includeSymbols) charCodes = charCodes.concat(SYMBOL_CODES);
+  if (includeNumbers) charCodes = charCodes.concat(NUMBER_CODES);
+  const passwordCharacters = [];
+  for (let i = 0; i < characterAmount; i++) {
+    const characterCode =
+      charCodes[Math.floor(Math.random() * charCodes.length)];
+    passwordCharacters.push(String.fromCharCode(characterCode));
+    copyText.classList.add("hidden");
+  }
+  return passwordCharacters.join("");
+};
+
