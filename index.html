@@ -69,6 +69,44 @@
             </div>
           </label>
         </div>
+        <!-- ********************************
+          ***********************************
+          BOTTOM SECTION
+          ***********************************
+        **********************************-->
+        <div class="px-5 py-7 md:px-7 md:py-8 mb-12 md:mb-20 bg-dark-grey">
+          <!-- OPTIONS CONTAINER -->
+          <div class="options mb-8 md:mb-9">
+            <!-- ********************************
+              ***********************************
+              RANGE SLIDER
+              ***********************************
+            **********************************-->
+            <div>
+              <label for="length">
+                <div class="flex justify-between mb-4">
+                  <p>Character Length</p>
+                  <h1
+                    id="length-num"
+                    class="text-heading-lg text-custom-green text-heading-md md:text-heading-lg"
+                  >
+                    12
+                  </h1>
+                </div>
+              </label>
+              <input
+                id="length"
+                class="option w-full h-2 mb-12 rounded-none bg-off-black appearance-none outline-none"
+                type="range"
+                min="8"
+                max="16"
+                step="1"
+                value="12"
+                onchange="rangeChange(this.value)"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </form>
   </body>
