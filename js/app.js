@@ -122,3 +122,12 @@ copybtnDOM.addEventListener("click", () => {
   copyText.classList.remove("hidden");
 });
 
+/* ------------------------------------
+---------------------------------------
+UPDATE #LENGTH-NUM ON RANGE INPUT VALUE CHANGE
+---------------------------------------
+------------------------------------ */
+function rangeChange(data) {
+  lengthNum.innerHTML = data;
+}
+
