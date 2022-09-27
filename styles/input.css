@@ -157,3 +157,12 @@ input[type="checkbox"] + label:hover::after {
     transition: background 450ms ease-in;
   }
 }
+
+@media (min-width: 768px) {
+  #generate:hover p {
+    color: #a4ffaf;
+  }
+  #generate:hover div svg path {
+    fill: #a4ffaf;
+  }
+}

@@ -1263,6 +1263,16 @@ input[type="checkbox"] + label:hover::after {
   }
 }
 
+@media (min-width: 768px) {
+  #generate:hover p {
+    color: #a4ffaf;
+  }
+
+  #generate:hover div svg path {
+    fill: #a4ffaf;
+  }
+}
+
 .placeholder\:text-off-white::-moz-placeholder {
   --tw-text-opacity: 1;
   color: rgb(230 229 234 / var(--tw-text-opacity));
@@ -1318,15 +1328,6 @@ input[type="checkbox"] + label:hover::after {
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
-}
-
-.group:hover .group-hover\:fill-custom-green {
-  fill: #a4ffaf;
-}
-
-.group:hover .group-hover\:text-custom-green {
-  --tw-text-opacity: 1;
-  color: rgb(164 255 175 / var(--tw-text-opacity));
 }
 
 @media (min-width: 768px) {
@@ -1792,23 +1793,6 @@ input[type="checkbox"] + label:hover::after {
 }
 
 @media (hover: hover) {
-  .hover-hover\:border {
-    border-width: 1px;
-  }
-
-  .hover-hover\:border-2 {
-    border-width: 2px;
-  }
-
-  .hover-hover\:border-custom-green {
-    --tw-border-opacity: 1;
-    border-color: rgb(164 255 175 / var(--tw-border-opacity));
-  }
-
-  .hover-hover\:bg-transparent {
-    background-color: transparent;
-  }
-
   .hover-hover\:hover\:border:hover {
     border-width: 1px;
   }
