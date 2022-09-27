@@ -36,6 +36,9 @@ module.exports = {
         "heading-md": "31px",
         "heading-lg": "43px",
       },
+      screens: {
+        "hover-hover": { raw: "(hover: hover)" },
+      },
     },
     screens: {
       md: "768px",

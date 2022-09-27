@@ -55,10 +55,10 @@ input[type="checkbox"]:checked + label::after {
 }
 
 input[type="checkbox"] + label:hover::after {
-  background-color: #e6e5ea;
+  /* background-color: #e6e5ea;
   border-width: 2px;
   border-color: #a4ffaf;
-  border-style: solid;
+  border-style: solid; */
   cursor: pointer;
 }
 
