@@ -131,3 +131,137 @@ function rangeChange(data) {
   lengthNum.innerHTML = data;
 }
 
+/* ------------------------------------
+---------------------------------------
+CHECK GENERATED PASSWORD'S STRENGTH
+---------------------------------------
+------------------------------------ */
+generatebtn.addEventListener("click", () => {
+  let val = result.value;
+
+  // TOO WEAK STRENGTH PASSWORD
+  if (
+    (val.match(alphabet) && val.length === 8) ||
+    (val.match(numbers) && val.length >= 8 && val.length <= 10) ||
+    (val.match(scharacters) && val.length >= 8 && val.length <= 10)
+  ) {
+    displayBadge.classList.add("active");
+    displayBadge.classList.remove("non-active");
+    displayBadge2.classList.remove("active");
+    displayBadge2.classList.add("non-active");
+    displayBadge3.classList.remove("active");
+    displayBadge3.classList.add("non-active");
+    displayBadge4.classList.remove("active");
+    displayBadge4.classList.add("non-active");
+    levelOne.classList.add("too-weak");
+    levelOne.classList.remove("weak");
+    levelOne.classList.remove("medium");
+    levelOne.classList.remove("strong");
+    levelTwo.classList.remove("weak");
+    levelTwo.classList.remove("medium");
+    levelTwo.classList.remove("strong");
+    levelThree.classList.remove("medium");
+    levelThree.classList.remove("strong");
+    levelFour.classList.remove("strong");
+  }
+
+  // WEAK STRENGTH PASSWORD
+  if (
+    (val.match(alphabet) && val.length > 8 && val.length <= 12) ||
+    (val.match(numbers) && val.length > 10 && val.length < 16) ||
+    (val.match(scharacters) && val.length > 10 && val.length < 16) ||
+    (val.match(alphabet) &&
+      val.match(numbers) &&
+      val.length >= 8 &&
+      val.length <= 12) ||
+    (val.match(alphabet) &&
+      val.match(scharacters) &&
+      val.length >= 8 &&
+      val.length <= 12) ||
+    (val.match(numbers) &&
+      val.match(scharacters) &&
+      val.length >= 10 &&
+      val.length < 16)
+  ) {
+    displayBadge.classList.remove("active");
+    displayBadge.classList.add("non-active");
+    displayBadge2.classList.add("active");
+    displayBadge2.classList.remove("non-active");
+    displayBadge3.classList.remove("active");
+    displayBadge3.classList.add("non-active");
+    displayBadge4.classList.remove("active");
+    displayBadge4.classList.add("non-active");
+    levelOne.classList.remove("too-weak");
+    levelOne.classList.add("weak");
+    levelOne.classList.remove("medium");
+    levelOne.classList.remove("strong");
+    levelTwo.classList.add("weak");
+    levelTwo.classList.remove("medium");
+    levelTwo.classList.remove("strong");
+    levelThree.classList.remove("medium");
+    levelThree.classList.remove("strong");
+    levelFour.classList.remove("strong");
+  }
+
+  // MEDIUM STRENGTH PASSWORD
+  if (
+    (val.match(alphabet) && val.length > 12) ||
+    (val.match(numbers) && val.length === 16) ||
+    (val.match(scharacters) && val.length === 16) ||
+    (val.match(alphabet) && val.match(numbers) && val.length > 12) ||
+    (val.match(alphabet) && val.match(scharacters) && val.length > 12) ||
+    (val.match(numbers) && val.match(scharacters) && val.length === 16) ||
+    (val.match(alphabet) &&
+      val.match(numbers) &&
+      val.match(scharacters) &&
+      val.length >= 8 &&
+      val.length <= 12)
+  ) {
+    displayBadge.classList.remove("active");
+    displayBadge.classList.add("non-active");
+    displayBadge2.classList.remove("active");
+    displayBadge2.classList.add("non-active");
+    displayBadge3.classList.add("active");
+    displayBadge3.classList.remove("non-active");
+    displayBadge4.classList.remove("active");
+    displayBadge4.classList.add("non-active");
+    levelOne.classList.remove("too-weak");
+    levelOne.classList.remove("weak");
+    levelOne.classList.add("medium");
+    levelOne.classList.remove("strong");
+    levelTwo.classList.remove("weak");
+    levelTwo.classList.add("medium");
+    levelTwo.classList.remove("strong");
+    levelThree.classList.add("medium");
+    levelThree.classList.remove("strong");
+    levelFour.classList.remove("strong");
+  }
+
+  // STRONG STRENGTH PASSWORD
+  if (
+    val.match(alphabet) &&
+    val.match(numbers) &&
+    val.match(scharacters) &&
+    val.length > 12
+  ) {
+    displayBadge.classList.remove("active");
+    displayBadge.classList.add("non-active");
+    displayBadge2.classList.remove("active");
+    displayBadge2.classList.add("non-active");
+    displayBadge3.classList.remove("active");
+    displayBadge3.classList.add("non-active");
+    displayBadge4.classList.add("active");
+    displayBadge4.classList.remove("non-active");
+    levelOne.classList.remove("too-weak");
+    levelOne.classList.remove("weak");
+    levelOne.classList.remove("medium");
+    levelOne.classList.add("strong");
+    levelTwo.classList.remove("weak");
+    levelTwo.classList.remove("medium");
+    levelTwo.classList.add("strong");
+    levelThree.classList.remove("medium");
+    levelThree.classList.add("strong");
+    levelFour.classList.add("strong");
+  }
+});
+
