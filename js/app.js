@@ -265,3 +265,17 @@ generatebtn.addEventListener("click", () => {
   }
 });
 
+/* ------------------------------------
+---------------------------------------
+CHANGE COLOR OF RANGE INPUT BEFORE THUMB
+---------------------------------------
+------------------------------------ */
+document.getElementById("length").oninput = function () {
+  var value = ((this.value - this.min) / (this.max - this.min)) * 100;
+  this.style.background =
+    "linear-gradient(to right, #a4ffaf 0%, #a4ffaf " +
+    value +
+    "%, #18171f " +
+    value +
+    "%, #18171f)";
+};
