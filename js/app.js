@@ -101,3 +101,24 @@ let generatePassword = (
   return passwordCharacters.join("");
 };
 
+/* ------------------------------------
+---------------------------------------
+Copy Password
+---------------------------------------
+------------------------------------ */
+copybtnDOM.addEventListener("click", () => {
+  const textarea = document.createElement("textarea");
+  const passwordToCopy = resultDOM.value;
+
+  // Edge Case when Password is Empty
+  if (!passwordToCopy) return;
+
+  // Copy Functionality
+  textarea.value = passwordToCopy;
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand("copy");
+  textarea.remove();
+  copyText.classList.remove("hidden");
+});
+
