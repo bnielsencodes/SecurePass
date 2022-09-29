@@ -40,7 +40,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/bnielsencodes/SecurePass](https://github.com/bnielsencodes/SecurePass)
-- Live Site URL: [https://bnielsen.dev/SecurePass] (https://bnielsen.dev/SecurePass)
+- Live Site URL: [https://bnielsen.dev/SecurePass](https://bnielsen.dev/SecurePass)
 
 ## My process
 
