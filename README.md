@@ -6,7 +6,7 @@ This is a solution to the [Password generator app challenge on Frontend Mentor](
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
+  - [Screenshots](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
@@ -31,7 +31,7 @@ Users should be able to:
 
 #### Desktop
 
-![screenshot of SecurePass website](assets/images/screenshots/SecurePass.png)
+![screenshot of SecurePass desktop website](assets/images/screenshots/SecurePass.png)
 
 #### Mobile
 
@@ -48,6 +48,7 @@ Users should be able to:
 
 - HTML5 markup
 - Tailwind CSS
+- CSS custom properties
 - Vanilla JavaScript
 - Mobile-first workflow
 
