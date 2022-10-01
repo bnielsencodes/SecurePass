@@ -3,21 +3,21 @@
 GLOBAL VARIABLES
 ---------------------------------------
 ------------------------------------ */
-const resultDOM = document.getElementById("result");
-const copybtnDOM = document.getElementById("copy");
+const result = document.getElementById("result");
+const copyBtn = document.getElementById("copy");
 const copyText = document.getElementById("copy-text");
-const lengthDOM = document.getElementById("length");
-const uppercaseDOM = document.getElementById("uppercase");
-const lowercaseDOM = document.getElementById("lowercase");
+const length = document.getElementById("length");
+const uppercase = document.getElementById("uppercase");
+const lowercase = document.getElementById("lowercase");
 const numbersDOM = document.getElementById("numbers");
-const symbolsDOM = document.getElementById("symbols");
-const generatebtn = document.getElementById("generate");
+const symbols = document.getElementById("symbols");
+const generateBtn = document.getElementById("generate");
 const form = document.getElementById("passwordGeneratorForm");
 const lengthNum = document.getElementById("length-num");
-const displayBadge = document.querySelector(".displayBadge");
-const displayBadge2 = document.querySelector(".displayBadge2");
-const displayBadge3 = document.querySelector(".displayBadge3");
-const displayBadge4 = document.querySelector(".displayBadge4");
+const tooWeak = document.querySelector(".too-weak");
+const weak = document.querySelector(".weak");
+const medium = document.querySelector(".medium");
+const strong = document.querySelector(".strong");
 const levelOne = document.getElementById("level-one");
 const levelTwo = document.getElementById("level-two");
 const levelThree = document.getElementById("level-three");
@@ -59,11 +59,11 @@ Checking the options that are selected and setting the password
 ------------------------------------ */
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  const characterAmount = lengthDOM.value;
-  const includeUppercase = uppercaseDOM.checked;
-  const includeLowercase = lowercaseDOM.checked;
+  const characterAmount = length.value;
+  const includeUppercase = uppercase.checked;
+  const includeLowercase = lowercase.checked;
   const includeNumbers = numbersDOM.checked;
-  const includeSymbols = symbolsDOM.checked;
+  const includeSymbols = symbols.checked;
   const password = generatePassword(
     characterAmount,
     includeUppercase,
@@ -71,7 +71,7 @@ form.addEventListener("submit", (e) => {
     includeNumbers,
     includeSymbols
   );
-  resultDOM.value = password;
+  result.value = password;
 });
 
 /* ------------------------------------
@@ -106,19 +106,19 @@ let generatePassword = (
 Copy Password
 ---------------------------------------
 ------------------------------------ */
-copybtnDOM.addEventListener("click", () => {
-  const textarea = document.createElement("textarea");
-  const passwordToCopy = resultDOM.value;
+copyBtn.addEventListener("click", () => {
+  const textArea = document.createElement("textarea");
+  const passwordToCopy = result.value;
 
   // Edge Case when Password is Empty
   if (!passwordToCopy) return;
 
   // Copy Functionality
-  textarea.value = passwordToCopy;
-  document.body.appendChild(textarea);
-  textarea.select();
+  textArea.value = passwordToCopy;
+  document.body.appendChild(textArea);
+  textArea.select();
   document.execCommand("copy");
-  textarea.remove();
+  textArea.remove();
   copyText.classList.remove("hidden");
 });
 
@@ -136,7 +136,7 @@ function rangeChange(data) {
 CHECK GENERATED PASSWORD'S STRENGTH
 ---------------------------------------
 ------------------------------------ */
-generatebtn.addEventListener("click", () => {
+generateBtn.addEventListener("click", () => {
   let val = result.value;
 
   // TOO WEAK STRENGTH PASSWORD
@@ -145,24 +145,24 @@ generatebtn.addEventListener("click", () => {
     (val.match(numbers) && val.length >= 8 && val.length <= 10) ||
     (val.match(scharacters) && val.length >= 8 && val.length <= 10)
   ) {
-    displayBadge.classList.add("active");
-    displayBadge.classList.remove("non-active");
-    displayBadge2.classList.remove("active");
-    displayBadge2.classList.add("non-active");
-    displayBadge3.classList.remove("active");
-    displayBadge3.classList.add("non-active");
-    displayBadge4.classList.remove("active");
-    displayBadge4.classList.add("non-active");
-    levelOne.classList.add("too-weak");
-    levelOne.classList.remove("weak");
-    levelOne.classList.remove("medium");
-    levelOne.classList.remove("strong");
-    levelTwo.classList.remove("weak");
-    levelTwo.classList.remove("medium");
-    levelTwo.classList.remove("strong");
-    levelThree.classList.remove("medium");
-    levelThree.classList.remove("strong");
-    levelFour.classList.remove("strong");
+    tooWeak.classList.add("active");
+    tooWeak.classList.remove("non-active");
+    weak.classList.remove("active");
+    weak.classList.add("non-active");
+    medium.classList.remove("active");
+    medium.classList.add("non-active");
+    strong.classList.remove("active");
+    strong.classList.add("non-active");
+    levelOne.classList.add("too-weak-active");
+    levelOne.classList.remove("weak-active");
+    levelOne.classList.remove("medium-active");
+    levelOne.classList.remove("strong-active");
+    levelTwo.classList.remove("weak-active");
+    levelTwo.classList.remove("medium-active");
+    levelTwo.classList.remove("strong-active");
+    levelThree.classList.remove("medium-active");
+    levelThree.classList.remove("strong-active");
+    levelFour.classList.remove("strong-active");
   }
 
   // WEAK STRENGTH PASSWORD
@@ -183,24 +183,24 @@ generatebtn.addEventListener("click", () => {
       val.length >= 10 &&
       val.length < 16)
   ) {
-    displayBadge.classList.remove("active");
-    displayBadge.classList.add("non-active");
-    displayBadge2.classList.add("active");
-    displayBadge2.classList.remove("non-active");
-    displayBadge3.classList.remove("active");
-    displayBadge3.classList.add("non-active");
-    displayBadge4.classList.remove("active");
-    displayBadge4.classList.add("non-active");
-    levelOne.classList.remove("too-weak");
-    levelOne.classList.add("weak");
-    levelOne.classList.remove("medium");
-    levelOne.classList.remove("strong");
-    levelTwo.classList.add("weak");
-    levelTwo.classList.remove("medium");
-    levelTwo.classList.remove("strong");
-    levelThree.classList.remove("medium");
-    levelThree.classList.remove("strong");
-    levelFour.classList.remove("strong");
+    tooWeak.classList.remove("active");
+    tooWeak.classList.add("non-active");
+    weak.classList.add("active");
+    weak.classList.remove("non-active");
+    medium.classList.remove("active");
+    medium.classList.add("non-active");
+    strong.classList.remove("active");
+    strong.classList.add("non-active");
+    levelOne.classList.remove("too-weak-active");
+    levelOne.classList.add("weak-active");
+    levelOne.classList.remove("medium-active");
+    levelOne.classList.remove("strong-active");
+    levelTwo.classList.add("weak-active");
+    levelTwo.classList.remove("medium-active");
+    levelTwo.classList.remove("strong-active");
+    levelThree.classList.remove("medium-active");
+    levelThree.classList.remove("strong-active");
+    levelFour.classList.remove("strong-active");
   }
 
   // MEDIUM STRENGTH PASSWORD
@@ -217,24 +217,24 @@ generatebtn.addEventListener("click", () => {
       val.length >= 8 &&
       val.length <= 12)
   ) {
-    displayBadge.classList.remove("active");
-    displayBadge.classList.add("non-active");
-    displayBadge2.classList.remove("active");
-    displayBadge2.classList.add("non-active");
-    displayBadge3.classList.add("active");
-    displayBadge3.classList.remove("non-active");
-    displayBadge4.classList.remove("active");
-    displayBadge4.classList.add("non-active");
-    levelOne.classList.remove("too-weak");
-    levelOne.classList.remove("weak");
-    levelOne.classList.add("medium");
-    levelOne.classList.remove("strong");
-    levelTwo.classList.remove("weak");
-    levelTwo.classList.add("medium");
-    levelTwo.classList.remove("strong");
-    levelThree.classList.add("medium");
-    levelThree.classList.remove("strong");
-    levelFour.classList.remove("strong");
+    tooWeak.classList.remove("active");
+    tooWeak.classList.add("non-active");
+    weak.classList.remove("active");
+    weak.classList.add("non-active");
+    medium.classList.add("active");
+    medium.classList.remove("non-active");
+    strong.classList.remove("active");
+    strong.classList.add("non-active");
+    levelOne.classList.remove("too-weak-active");
+    levelOne.classList.remove("weak-active");
+    levelOne.classList.add("medium-active");
+    levelOne.classList.remove("strong-active");
+    levelTwo.classList.remove("weak-active");
+    levelTwo.classList.add("medium-active");
+    levelTwo.classList.remove("strong-active");
+    levelThree.classList.add("medium-active");
+    levelThree.classList.remove("strong-active");
+    levelFour.classList.remove("strong-active");
   }
 
   // STRONG STRENGTH PASSWORD
@@ -244,24 +244,24 @@ generatebtn.addEventListener("click", () => {
     val.match(scharacters) &&
     val.length > 12
   ) {
-    displayBadge.classList.remove("active");
-    displayBadge.classList.add("non-active");
-    displayBadge2.classList.remove("active");
-    displayBadge2.classList.add("non-active");
-    displayBadge3.classList.remove("active");
-    displayBadge3.classList.add("non-active");
-    displayBadge4.classList.add("active");
-    displayBadge4.classList.remove("non-active");
-    levelOne.classList.remove("too-weak");
-    levelOne.classList.remove("weak");
-    levelOne.classList.remove("medium");
-    levelOne.classList.add("strong");
-    levelTwo.classList.remove("weak");
-    levelTwo.classList.remove("medium");
-    levelTwo.classList.add("strong");
-    levelThree.classList.remove("medium");
-    levelThree.classList.add("strong");
-    levelFour.classList.add("strong");
+    tooWeak.classList.remove("active");
+    tooWeak.classList.add("non-active");
+    weak.classList.remove("active");
+    weak.classList.add("non-active");
+    medium.classList.remove("active");
+    medium.classList.add("non-active");
+    strong.classList.add("active");
+    strong.classList.remove("non-active");
+    levelOne.classList.remove("too-weak-active");
+    levelOne.classList.remove("weak-active");
+    levelOne.classList.remove("medium-active");
+    levelOne.classList.add("strong-active");
+    levelTwo.classList.remove("weak-active");
+    levelTwo.classList.remove("medium-active");
+    levelTwo.classList.add("strong-active");
+    levelThree.classList.remove("medium-active");
+    levelThree.classList.add("strong-active");
+    levelFour.classList.add("strong-active");
   }
 });
 

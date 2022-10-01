@@ -74,22 +74,22 @@ input[type="checkbox"] + label:hover::after {
   display: block;
 }
 
-.too-weak {
+.too-weak-active {
   border-color: #f64a4a;
   background-color: #f64a4a;
 }
 
-.weak {
+.weak-active {
   border-color: #fb7c58;
   background-color: #fb7c58;
 }
 
-.medium {
+.medium-active {
   border-color: #f8cd65;
   background-color: #f8cd65;
 }
 
-.strong {
+.strong-active {
   border-color: #a4ffaf;
   background-color: #a4ffaf;
 }
