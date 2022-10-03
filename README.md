@@ -31,7 +31,7 @@ Users should be able to:
 
 #### Desktop
 
-![screenshot of SecurePass desktop website](assets/images/screenshots/SecurePasss.png)
+![screenshot of SecurePass desktop website](assets/images/screenshots/SecurePass.png)
 
 #### Mobile
 
