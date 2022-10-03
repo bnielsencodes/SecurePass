@@ -98,47 +98,8 @@ let generatePassword = (
     passwordCharacters.push(String.fromCharCode(characterCode));
     copyText.classList.add("hidden");
   }
-  return passwordCharacters.join("");
-};
-
-/* ------------------------------------
----------------------------------------
-Copy Password
----------------------------------------
------------------------------------- */
-copyBtn.addEventListener("click", () => {
-  const textArea = document.createElement("textarea");
-  const passwordToCopy = result.value;
-
-  // Edge Case when Password is Empty
-  if (!passwordToCopy) return;
-
-  // Copy Functionality
-  textArea.value = passwordToCopy;
-  document.body.appendChild(textArea);
-  textArea.select();
-  document.execCommand("copy");
-  textArea.remove();
-  copyText.classList.remove("hidden");
-});
-
-/* ------------------------------------
----------------------------------------
-UPDATE #LENGTH-NUM ON RANGE INPUT VALUE CHANGE
----------------------------------------
------------------------------------- */
-function rangeChange(data) {
-  lengthNum.innerHTML = data;
-}
-
-/* ------------------------------------
----------------------------------------
-CHECK GENERATED PASSWORD'S STRENGTH
----------------------------------------
------------------------------------- */
-generateBtn.addEventListener("click", () => {
-  let val = result.value;
-
+  let generatedPassword = passwordCharacters.join("");
+  let val = generatedPassword;
   // TOO WEAK STRENGTH PASSWORD
   if (
     (val.match(alphabet) && val.length === 8) ||
@@ -263,7 +224,47 @@ generateBtn.addEventListener("click", () => {
     levelThree.classList.add("strong-active");
     levelFour.classList.add("strong-active");
   }
+  return generatedPassword;
+};
+
+/* ------------------------------------
+---------------------------------------
+Copy Password
+---------------------------------------
+------------------------------------ */
+copyBtn.addEventListener("click", () => {
+  const textArea = document.createElement("textarea");
+  const passwordToCopy = result.value;
+
+  // Edge Case when Password is Empty
+  if (!passwordToCopy) return;
+
+  // Copy Functionality
+  textArea.value = passwordToCopy;
+  document.body.appendChild(textArea);
+  textArea.select();
+  document.execCommand("copy");
+  textArea.remove();
+  copyText.classList.remove("hidden");
 });
+
+/* ------------------------------------
+---------------------------------------
+UPDATE #LENGTH-NUM ON RANGE INPUT VALUE CHANGE
+---------------------------------------
+------------------------------------ */
+function rangeChange(data) {
+  lengthNum.innerHTML = data;
+}
+
+/* ------------------------------------
+---------------------------------------
+CHECK GENERATED PASSWORD'S STRENGTH
+---------------------------------------
+------------------------------------ */
+// generateBtn.addEventListener("click", () => {
+
+// });
 
 /* ------------------------------------
 ---------------------------------------
