@@ -1222,6 +1222,10 @@ input[type="checkbox"] + label:hover::after {
   background-color: #a4ffaf;
 }
 
+#generate svg path {
+  fill: #24232c;
+}
+
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   /*Chrome*/
 
@@ -1288,7 +1292,7 @@ input[type="checkbox"] + label:hover::after {
     color: #a4ffaf;
   }
 
-  #generate:hover div svg path {
+  #generate:hover svg path {
     fill: #a4ffaf;
   }
 }

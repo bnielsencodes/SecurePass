@@ -90,6 +90,10 @@ input[type="checkbox"] + label:hover::after {
   background-color: #a4ffaf;
 }
 
+#generate svg path {
+  fill: #24232c;
+}
+
 @layer utilities {
   /* HIDE SCROLLBAR BUT STILL ALLOW SCROLL */
   /* Chrome, Safari and Opera */
@@ -158,7 +162,7 @@ input[type="checkbox"] + label:hover::after {
   #generate:hover {
     color: #a4ffaf;
   }
-  #generate:hover div svg path {
+  #generate:hover svg path {
     fill: #a4ffaf;
   }
 }
