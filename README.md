@@ -56,6 +56,8 @@ Users should be able to:
 
 This project really challenged my Javascript knowledge. Luckily I was able to find the resources linked below that helped me further understand some of the things I was struggling with.
 
+One thing I struggled with was I was facing an issue where the password strength wouldn't update until the second instance of generating a password. It took a little tinkering around with the JavaScript before I realized that I needed to store the generated password in a variable before the proceeding logic in the function. 
+
 ### Continued development
 
 I really wanted to use React with this project, but am not comfortable enough with it yet so I stuck to HTML, Tailwind CSS, and vanilla JavaScript. I plan on continuing to improve my React skills and knowledge so I can feel more confident to use it on future projects.
