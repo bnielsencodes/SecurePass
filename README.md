@@ -39,8 +39,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://github.com/bnielsencodes/SecurePass](https://github.com/bnielsencodes/securepass)
-- Live Site URL: [https://bnielsen.dev/SecurePass](https://bnielsen.dev/securepass)
+- Solution URL: [https://github.com/bnielsencodes/securepass](https://github.com/bnielsencodes/securepass)
+- Live Site URL: [https://bnielsen.dev/securepass](https://bnielsen.dev/securepass)
 
 ## My Process
 
