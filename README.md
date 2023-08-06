@@ -1,14 +1,14 @@
-# SecurePass - Password Generator
+# SecurePass
+
+#### Strong Random Password Generator
 
 ## Table of Contents
 
 - [Overview](#overview)
   - [Screenshots](#screenshots)
-  - [Links](#links)
+  - [Link](#link)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
 
@@ -24,30 +24,21 @@
 
 <img src="assets/images/screenshots/SecurePass_Mobile.png" alt="screenshot of SecurePass mobile website" width="300">
 
-### Links
+### Link
 
-- Solution URL: [https://github.com/bnielsencodes/securepass](https://github.com/bnielsencodes/securepass)
-- Live Site URL: [https://bnielsen.dev/securepass](https://bnielsen.dev/securepass)
+- Live Site URL: [https://bnielsencodes.github.io/securepass](https://bnielsencodes.github.io/securepass)
 
 ## My Process
 
 ### Built with
 
-- HTML5 markup
-- Tailwind CSS
-- CSS custom properties
-- Vanilla JavaScript
-- Mobile-first workflow
-
-### What I Learned
-
-This project really challenged my Javascript knowledge. Luckily I was able to find the resources linked below that helped me further understand some of the things I was struggling with.
-
-One thing I struggled with was I was facing an issue where the password strength wouldn't update until the second instance of generating a password. It took a little tinkering around with the JavaScript before I realized that I needed to store the generated password in a variable before the proceeding logic in the function.
-
-### Continued development
-
-I really wanted to use React with this project, but am not comfortable enough with it yet so I stuck to HTML, Tailwind CSS, and vanilla JavaScript. I plan on continuing to improve my React skills and knowledge so I can feel more confident to use it on future projects.
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [Tailwind CSS](https://tailwindcss.com) - CSS framework
+- [CSS Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox)
+- [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
+- [Semantic HTML5 markup](https://www.w3schools.com/html/html5_semantic_elements.asp)
+- [Mobile-first workflow](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design)
+- [VS Code](https://code.visualstudio.com/) - Integrated development environment
 
 ### Useful Resources
 
@@ -56,7 +47,7 @@ I really wanted to use React with this project, but am not comfortable enough wi
 
 ## Author
 
-- Website - [Brandon Nielsen](https://www.bnielsen.dev)
-- LinkedIn - [Brandon Nielsen](https://www.linkedin.com/in/bnielsencodes)
+- Portfolio Website - [bnielsen.dev](https://bnielsen.dev)
+- LinkedIn - [/in/bnielsencodes](https://linkedin.com/in/bnielsencodes)
 - Twitter - [@bnielsencodes](https://twitter.com/bnielsencodes)
 - Frontend Mentor - [@bnielsencodes](https://www.frontendmentor.io/profile/bnielsencodes)
